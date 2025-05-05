@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Image from "next/image";
 import logo from "../assets/ball.png"
 import "./globals.css";
-
+import { Menu } from "../components/menu"
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,19 +30,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <nav className="bg-orange-400 flex h-[60px] relative z-[1000] top-[0]">
-          <div className="w-full h-full flex items-center justify-between px-5 py-0 mx-auto">
-          <Image src={logo} alt="logo" className="w-[60px] h-[60px]" />
-          <ul className="flex list-none g-[1rem] m-[0] p-[0] ">
-            <li>
-              <a href="" className="no-underline text-[20px] p-[0.8rem] text-black font-black relative ">Video</a>
-            </li>
-            <li>
-              <a href="" className="no-underline text-[20px] p-[0.8rem] text-black font-black relative">Dragon Ball</a>
-            </li>
-          </ul>
-          </div>
-        </nav>
+        <Menu op1="home" op2="HookPage" op3="Axios" op4="Server side"/>
         {children}
       </body>
     </html>
