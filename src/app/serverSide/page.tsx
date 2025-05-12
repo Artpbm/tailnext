@@ -1,6 +1,6 @@
 import { Metadata } from "next"
 import { Suspense } from "react"
-
+import Link from "next/link"
 type IData = {
     results: {
         name: string;
@@ -20,10 +20,11 @@ const ServerSide  = async () => {
     <div>Server Side Page try</div>
     {data?.results.map((item, index) => {
         return(
-            <div className="mb-20"   key={index} >
+            <div className="mb-20" key={index} >
                 <h1>{item.name}</h1>
                 <h2>{item.id}</h2>
                 <p>{item.status}</p>
+                <Link className="bg-black text-white" href={`/personagem/${item.id}`}>Abrir detalhes</Link>
             </div>
         )
     })}
